@@ -14,6 +14,7 @@
 
 /******** Otros modulos del proyecto ********/
 #include "prj_input.h"
+#include "prj_cmd.h"
 #include "prj_output.h"
 #include "prj_comm.h"
 #include "IoT.h"
@@ -29,6 +30,7 @@ void setup() {
   /* Set program cycle time */
   timerSetCycleTime(CYCLE_TIME_IN_MICROS);
   prj_input_init();
+  prj_cmd_init();
   prj_output_init();
   prj_comm_init();
   prj_iot_init();
@@ -45,6 +47,7 @@ bool firstLoop=true;
 void loop() {
 
   prj_input();
+  prj_cmd();
   Emergency();
   DispatchSysCmd();
   if (dre.ovr_pulses == true) {

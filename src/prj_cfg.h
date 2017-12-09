@@ -16,7 +16,6 @@
 #define CFG_USE_IOT
 
 // Configuración de mecanismos de traza
-//#define DEBUG_SENSOR_RGB_SUELO
 //#define DEBUG_TIEMPO_CICLO
 //#define DEBUG_IOT
 

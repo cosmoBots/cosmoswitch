@@ -5,17 +5,6 @@
 #include "Arduino.h"
 #include "IoT.h"
 
-#ifdef ESP8266_WEMOS_D1MINI
-  ADC_MODE(ADC_VCC);
-#elif ARDUINO_ESP8266_NODEMCU
-  ADC_MODE(ADC_VCC);
-#elif ESP32_DEV
-#elif TEENSY31
-#elif ARDUINO_AVR_UNO
-#else
-#error "No microcontroller defined"
-#endif
-
 void process_received_command(void){
   int tmpcursor;
   dre.incoming_bytes[dre.serial_counter-1] = '\0';
@@ -55,22 +44,6 @@ void prj_cmd(void){
   int tmpcursor;
   int ret = 0;
 
-  #ifdef ESP8266_WEMOS_D1MINI
-  dre.bat = ESP.getVcc();
-  #elif ARDUINO_ESP8266_NODEMCU
-  dre.bat = ESP.getVcc();
-  #elif ESP32_DEV
-  dre.bat = analogRead(CFG_BAT_ADC);
-  #elif TEENSY31
-  dre.bat = analogRead(CFG_BAT_ADC);
-  #elif ARDUINO_AVR_UNO
-  dre.bat = analogRead(CFG_BAT_ADC);
-  #else
-  #error "No microcontroller defined"
-  #endif
-
-  dre.emgcy_button = (digitalRead(CFG_EMGCY_BUT)==LOW);
-
 #ifdef DEBUG_SERIAL_RX
   ret = dre.serial_counter;
 #endif
@@ -79,7 +52,7 @@ void prj_cmd(void){
   #ifdef DEBUG_SERIAL_RX
   if (ret != dre.serial_counter){
     Serial.println(dre.incoming_bytes);
-    for (tmpcursor=0;tmpcursor<dre.serial_counter;tmpcursor++){
+    for (tmpcursor = 0; tmpcursor < dre.serial_counter; tmpcursor++){
       Serial.print(' ');
     }
     Serial.println('^');
