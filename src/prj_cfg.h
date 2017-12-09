@@ -9,7 +9,6 @@
 #define CYCLE_TIME_IN_MICROS (5000L)
 
 // Configuración de funcionalidades activas
-//#define CFG_USE_MOTOR_SHIELD
 #define CFG_USE_FREQCOUNT
 #define CFG_USE_WIFI
 #define CFG_USE_MQTT
@@ -18,6 +17,7 @@
 // Configuración de mecanismos de traza
 //#define DEBUG_TIEMPO_CICLO
 //#define DEBUG_IOT
+#define DEBUG_PULSE
 
 /* Microcontroller variants */
 #ifdef ESP8266_WEMOS_D1MINI

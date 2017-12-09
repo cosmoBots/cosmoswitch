@@ -33,12 +33,7 @@ void IoTMng(  )
         /* State ID: ID_IOTMNG_CONNECTING */
         case ID_IOTMNG_CONNECTING:
         {
-            if( dre.iot_connected == true )
-            {
-                /* Transition ID: ID_IOTMNG_TRANSITION_CONNECTION_2 */
-                state = ID_IOTMNG_WORKINGONLINE;
-            }
-            else if( dre.iot_connected == false )
+            if( dre.iot_connected == false )
             {
                 /* Transition ID: ID_IOTMNG_TRANSITION_CONNECTION_6 */
                 /* Actions: */
@@ -47,6 +42,11 @@ void IoTMng(  )
 
                 dre.iot_connect = true;
                 /* ['<global>::iot_connect' end] */
+            }
+            else if( dre.iot_connected == true )
+            {
+                /* Transition ID: ID_IOTMNG_TRANSITION_CONNECTION_2 */
+                state = ID_IOTMNG_WORKINGONLINE;
             }
             break;
         }
@@ -123,15 +123,7 @@ void FuncMngr(  )
         /* State ID: ID_FUNCMNGR_INIT */
         case ID_FUNCMNGR_INIT:
         {
-            if( dre.iot_connected == false )
-            {
-                /* Transition ID: ID_FUNCMNGR_TRANSITION_CONNECTION */
-                /* Actions: */
-                /* ['<global>::iot_dont_publish' begin] */
-                dre.iot_publish = false;
-                /* ['<global>::iot_dont_publish' end] */
-            }
-            else if( dre.iot_connected == true )
+            if( dre.iot_connected == true )
             {
                 /* Transition ID: ID_FUNCMNGR_TRANSITION_CONNECTION */
                 /* Actions: */
@@ -149,6 +141,14 @@ void FuncMngr(  )
                 dre.iot_publish_timer = 0;
                 /* ['<global>::iot_pub_timer_rst' end] */
                 state = ID_FUNCMNGR_WORKING;
+            }
+            else if( dre.iot_connected == false )
+            {
+                /* Transition ID: ID_FUNCMNGR_TRANSITION_CONNECTION */
+                /* Actions: */
+                /* ['<global>::iot_dont_publish' begin] */
+                dre.iot_publish = false;
+                /* ['<global>::iot_dont_publish' end] */
             }
             break;
         }
@@ -469,9 +469,7 @@ void DispatchSysCmd(  )
             /* Actions: */
             /* ['<global>::reset_cmd_storage' begin] */
             dre.cmd_base = 0;
-
             dre.cmd_counter = 0;
-
             /* ['<global>::reset_cmd_storage' end] */
             state = ID_DISPATCHSYSCMD_WAITING;
             break;
@@ -498,12 +496,36 @@ void DispatchSysCmd(  )
                 /* ['<global>::process_pulse_cmd' end] */
                 state = ID_DISPATCHSYSCMD_PULSECMD;
             }
+            else if( (dre.cmd_storage[dre.cmd_base][0] == 'e') )
+            {
+                /* Transition ID: ID_DISPATCHSYSCMD_TRANSITION_CONNECTION */
+                /* Actions: */
+                /* ['<global>::process_emgcy_cmd' begin] */
+                dre.emgcy_action = (dre.cmd_storage[dre.cmd_base][1] == '1');
+                Serial.print("cmd_base: ");Serial.println(dre.cmd_storage[dre.cmd_base][1]);
+                /* ['<global>::process_emgcy_cmd' end] */
+                state = ID_DISPATCHSYSCMD_EMGCYCMD;
+            }
             break;
         }
         /* State ID: ID_DISPATCHSYSCMD_PULSECMD */
         case ID_DISPATCHSYSCMD_PULSECMD:
         {
             if( dre.pulses_to_send == 0 )
+            {
+                /* Transition ID: ID_DISPATCHSYSCMD_TRANSITION_CONNECTION */
+                /* Actions: */
+                /* ['<global>::jmp_next_cmd' begin] */
+                dre.cmd_base = (dre.cmd_base + 1) % CFG_CMD_STORAGE_SIZE;
+                /* ['<global>::jmp_next_cmd' end] */
+                state = ID_DISPATCHSYSCMD_WAITING;
+            }
+            break;
+        }
+        /* State ID: ID_DISPATCHSYSCMD_EMGCYCMD */
+        case ID_DISPATCHSYSCMD_EMGCYCMD:
+        {
+            if( true /* Instant command */ )
             {
                 /* Transition ID: ID_DISPATCHSYSCMD_TRANSITION_CONNECTION */
                 /* Actions: */

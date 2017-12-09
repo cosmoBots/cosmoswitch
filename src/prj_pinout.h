@@ -19,8 +19,10 @@
 #define CFG_EMGCY_BUT -1  // A través de este pin se va a recibir la petición de emergencia.
 #elif ESP32_DEV
 #define CFG_BAT_ADC 34
+#define CFG_EXTRA_ADC 35
 #define CFG_PULSE_CMD_PIN 14 // A través de este pin se va a enviar el comando de temporización del masaje
 #define CFG_EMGCY_BUT 13  // A través de este pin se va a recibir la petición de emergencia.
+#define CFG_EMGCY_RELAY_PIN 12 // A través de aquí controlamos el relé de emergencia
 #elif TEENSY31
 #error "TODO: Definir pines para la TEENSY31"
 #define CFG_BAT_ADC -1

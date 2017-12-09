@@ -17,7 +17,7 @@ void dre_init(void){
 
   dre.emgcy_timer = 0;
   dre.emgcy_button = false;
-  dre.emgcy_action = false;
+  dre.emgcy_action = true;
   dre.ovr_emgcy_action = false;
   dre.cmd_emgcy_action = false;
 
