@@ -9,10 +9,11 @@
 #define CYCLE_TIME_IN_MICROS (5000L)
 
 // Configuración de funcionalidades activas
-#define CFG_USE_FREQCOUNT
 #define CFG_USE_WIFI
 #define CFG_USE_MQTT
 #define CFG_USE_IOT
+#define CFG_USE_RELAY_SET
+//#define CFG_USE_EMGCY_RELAY
 
 // Configuración de mecanismos de traza
 //#define DEBUG_TIEMPO_CICLO
@@ -30,7 +31,6 @@
 #undef CFG_USE_MOTOR_SHIELD
 #elif ESP32_DEV
 #undef CFG_USE_MOTOR_SHIELD
-#undef CFG_USE_FREQCOUNT
 #elif TEENSY31
 #undef CFG_USE_DEEPSLEEP  // Deep Sleep only implemented in ESP32_DEV
 // TODO: Implement deep sleep mode in TEENSY
@@ -85,6 +85,12 @@
 #define OVR_PULSES_LABEL "ovr_pulses" // Assing the variable label
 #define DEVICE_LABEL "cosmoswitch1" // Assig the device label
 #define CFG_MQTT_BROKER "things.ubidots.com"
+
+#ifdef CFG_USE_RELAY_SET
+#define CFG_RELAYSET_NUMBER 8
+#define CMD_RELAYSET_ACTION_LABEL "cmd_relay_action_" // Assing the variable label
+#define OVR_RELAYSET_ACTION_LABEL "ovr_relay_action_" // Assing the variable label
+#endif
 
 #endif
 

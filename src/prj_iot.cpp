@@ -38,8 +38,13 @@ const char * VARIABLE_LABEL_PULSES_TO_SEND= "pulses_to_send"; // Assign the vari
 ****************************************/
 WiFiClient ubidots;
 PubSubClient client(ubidots);
+String relayset_cmd_labels [CFG_RELAYSET_NUMBER];
+String relayset_ovr_labels [CFG_RELAYSET_NUMBER];
+
 
 void iot_set_suscriptions(void){
+  int i;
+
   client.subscribe("/v1.6/devices/"DEVICE_LABEL"/"CMD_EMGCY_ACTION_LABEL"/lv");
   client.loop();
   client.subscribe("/v1.6/devices/"DEVICE_LABEL"/"OVR_EMGCY_ACTION_LABEL"/lv");
@@ -48,9 +53,31 @@ void iot_set_suscriptions(void){
   client.loop();
   client.subscribe("/v1.6/devices/"DEVICE_LABEL"/"CMD_PULSES_LABEL"/lv");
   client.loop();
+
+  #ifdef CFG_USE_RELAY_SET
+  for (i = 0; i < CFG_RELAYSET_NUMBER; i++){
+    relayset_cmd_labels[i] = String("/v1.6/devices/") +
+    String(DEVICE_LABEL) +
+    String("/") +
+    String(CMD_RELAYSET_ACTION_LABEL) +
+    i +
+    String("/lv");
+    client.subscribe(relayset_cmd_labels[i].c_str());
+    client.loop();
+    relayset_ovr_labels[i] = String("/v1.6/devices/") +
+    String(DEVICE_LABEL) +
+    String("/") +
+    String(OVR_RELAYSET_ACTION_LABEL) +
+    i +
+    String("/lv");
+    client.subscribe(relayset_ovr_labels[i].c_str());
+    client.loop();
+  }
+  #endif
 }
 
 void callback_ovr(char* topic, byte* payload, unsigned int length) {
+  int i;
   char p[length + 1];
   memcpy(p, payload, length);
   p[length] = NULL;
@@ -92,6 +119,18 @@ void callback_ovr(char* topic, byte* payload, unsigned int length) {
         }
       }
     }
+    #ifdef CFG_USE_RELAY_SET
+    for (i = 0; i < CFG_RELAYSET_NUMBER; i++){
+      if (strcmp_P(topic, relayset_ovr_labels[i].c_str())==0){
+        Serial.print(i);
+        if (message == "0") {
+          Serial.println(" Recibido 0");
+        } else {
+          Serial.println(" Recibido 1");
+        }
+      }
+    }
+    #endif
   }
 
   //Serial.write(payload, length);
