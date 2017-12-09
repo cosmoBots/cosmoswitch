@@ -1,0 +1,107 @@
+#ifndef _PRJ_CFG_H
+#define _PRJ_CFG_H
+
+#include <Arduino.h>
+#include "gttc_timer.h"
+#include <SPI.h>  // TODO: solve an issue https://github.com/platformio/platformio-core/issues/48
+
+// Gestion de la base de tiempos
+#define CYCLE_TIME_IN_MICROS (5000L)
+
+// Configuración de funcionalidades activas
+//#define CFG_USE_MOTOR_SHIELD
+#define CFG_USE_FREQCOUNT
+#define CFG_USE_WIFI
+#define CFG_USE_MQTT
+#define CFG_USE_IOT
+
+// Configuración de mecanismos de traza
+//#define DEBUG_SENSOR_RGB_SUELO
+//#define DEBUG_TIEMPO_CICLO
+//#define DEBUG_IOT
+
+/* Microcontroller variants */
+#ifdef ESP8266_WEMOS_D1MINI
+#undef CFG_USE_DEEPSLEEP  // Deep Sleep only implemented in ESP32_DEV
+// TODO: Implement deep sleep mode in ESP8266
+#undef CFG_USE_MOTOR_SHIELD
+#elif ARDUINO_ESP8266_NODEMCU
+#undef CFG_USE_DEEPSLEEP  // Deep Sleep only implemented in ESP32_DEV
+// TODO: Implement deep sleep mode in ESP8266
+#undef CFG_USE_MOTOR_SHIELD
+#elif ESP32_DEV
+#undef CFG_USE_MOTOR_SHIELD
+#undef CFG_USE_FREQCOUNT
+#elif TEENSY31
+#undef CFG_USE_DEEPSLEEP  // Deep Sleep only implemented in ESP32_DEV
+// TODO: Implement deep sleep mode in TEENSY
+#undef CFG_USE_WIFI
+#undef CFG_USE_MQTT
+#undef CFG_USE_IOT
+#undef CFG_USE_MOTOR_SHIELD
+#elif ARDUINO_AVR_UNO
+#undef CFG_USE_DEEPSLEEP  // Deep Sleep only implemented in ESP32_DEV
+// TODO: Implement deep sleep mode in TEENSY
+#undef CFG_USE_WIFI
+#undef CFG_USE_MQTT
+#undef CFG_USE_IOT
+#else
+#error "No microcontroller defined"
+#endif
+
+// Gestión de los comandos serie
+#define CFG_CMD_LENGTH 12
+#define CFG_CMD_STORAGE_SIZE 4
+
+// Gestion de inicio
+#define CFG_BOTON_FILT_TIME 10
+#define CFG_COMM_FILT_TIME 20
+
+//Tira de LEDS, no define solamente los pines sino el numero de LED's
+#define CTE_STRIP_PIN  26
+#define CTE_NUM_LEDS   35
+#define CTE_MAX_ELEM 5
+
+//Constantes que definen el rango de precision del color
+#define CTE_MR ((const int)45)
+#define CTE_MG ((const int)45)
+#define CTE_MB ((const int)45)
+#define CTE_OK ((const int)3)
+#define CTE_MM ((const int)13)  //define un rango alrededor del 0 equivalente al 5% del rango, en el cual tambien se considera que el motor debe pararse
+#define CTE_ML ((const int)13)  //define el rango en torno al 0 para el valor de la tira de LED, estableciendo un margen mayor
+
+#define CFG_PULSE_TIMER_UP CALC_CYCLE_COUNT_FOR_TIME(50000)
+#define CFG_PULSE_TIMER_DOWN CALC_CYCLE_COUNT_FOR_TIME(200000)
+#define CFG_EMGCY_QUALTIME CALC_CYCLE_COUNT_FOR_TIME(50000)
+#define CFG_EMGCY_ACTTIME CALC_CYCLE_COUNT_FOR_TIME(5000000)
+
+#ifdef CFG_USE_MQTT
+#define TOKEN "A1E-7p4h7Rjd3gx960Z2R1F5dfMxSTE689" // Put your Ubidots' TOKEN
+#define MQTT_CLIENT_NAME "cosmoswitch1" // MQTT client Name, please enter your own 8-12 alphanumeric character ASCII string;
+//it should be a random and unique ascii string and different from all other devices
+#define CFG_PUBLISH_TIME CALC_CYCLE_COUNT_FOR_TIME(1000000)
+#define CMD_EMGCY_ACTION_LABEL "cmd_emgcy_action" // Assing the variable label
+#define OVR_EMGCY_ACTION_LABEL "ovr_emgcy_action" // Assing the variable label
+#define CMD_PULSES_LABEL "cmd_pulses" // Assing the variable label
+#define OVR_PULSES_LABEL "ovr_pulses" // Assing the variable label
+#define DEVICE_LABEL "cosmoswitch1" // Assig the device label
+#define CFG_MQTT_BROKER "things.ubidots.com"
+
+#endif
+
+#ifdef CFG_USE_WIFI
+#if 0
+#define WIFISSID "MCC_PUBLICO" // Put your WifiSSID here
+#define PASSWORD "" // Put your wifi password here
+#else
+#if 1
+#define WIFISSID "FaroWifiSot" // Put your WifiSSID here
+#define PASSWORD "20DJunioD2009" // Put your wifi password here
+#else
+#define WIFISSID "iacext" // Put your WifiSSID here
+#define PASSWORD ".redwifideliac." // Put your wifi password here
+#endif
+#endif
+#endif
+
+#endif

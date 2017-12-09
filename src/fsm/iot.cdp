@@ -1,0 +1,2671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project owner="CodeDesigner" version="1.0">
+  <project_properties>
+    <object type="udRootItem">
+      <property name="id" type="long">1</property>
+      <property name="name" type="string">Project items</property>
+      <settings>
+        <object type="udGeneratorCategory">
+          <property name="id" type="long">1</property>
+          <property name="Output directory" type="dirname">..</property>
+          <property name="Base file name" type="string">IoT</property>
+          <property name="Code items file name" type="string">IoT_CI</property>
+          <property name="Generate code descriptions" type="bool">1</property>
+          <property name="Synchronize before generation" type="bool">0</property>
+        </object>
+        <object type="udHiddenProjectCategory">
+          <property name="id" type="long">2</property>
+          <property name="active_language" type="string">udCPPLanguage</property>
+          <property name="project_version" type="long">2</property>
+        </object>
+        <object type="udStateChartCategory">
+          <property name="id" type="long">3</property>
+          <property name="Invert conditions" type="bool">1</property>
+          <property name="Merge parallel transitions" type="bool">1</property>
+          <property name="Merge direct branches" type="bool">1</property>
+          <property name="Omit unused labels" type="bool">1</property>
+        </object>
+      </settings>
+    </object>
+  </project_properties>
+  <object type="udPackageItem">
+    <property name="id" type="long">2</property>
+    <property name="name" type="string">IoT</property>
+    <object type="udSStateChartDiagramItem">
+      <property name="id" type="long">3</property>
+      <property name="name" type="string">IoTMng</property>
+      <property name="description" type="string">Manager for the IoT connection</property>
+      <property name="diagram_type" type="string">Simple State Chart</property>
+      <property name="generate_code" type="bool">1</property>
+      <property name="output_file" type="string">&lt;default&gt;</property>
+      <property name="active_generator" type="string">udSStateChartGenerator</property>
+      <property name="active_algorithm" type="string">udLoopCaseAlgorithm</property>
+      <property name="input_action" type="string">&lt;none&gt;</property>
+      <property name="non_blocking" type="bool">1</property>
+      <property name="inline" type="bool">0</property>
+      <diagram>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">1</property>
+          <property name="relative_position" type="realpoint">630.000000,90.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Disconnecting</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">2</property>
+              <property name="relative_position" type="realpoint">5.000000,5.000000</property>
+              <property name="size" type="realpoint">90.000000,15.000000</property>
+              <property name="text" type="string">Disconnecting</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlInitialItem">
+          <property name="id" type="long">3</property>
+          <property name="relative_position" type="realpoint">77.000000,30.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udInitialElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Initial</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">20.000000,20.000000</property>
+          <property name="fill" type="brush">0,0,0,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">4</property>
+              <property name="relative_position" type="realpoint">0.000000,-25.000000</property>
+              <property name="size" type="realpoint">35.000000,15.000000</property>
+              <property name="text" type="string">Initial</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">5</property>
+          <property name="relative_position" type="realpoint">207.000000,100.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Connecting</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">6</property>
+              <property name="relative_position" type="realpoint">14.000000,5.000000</property>
+              <property name="size" type="realpoint">72.000000,15.000000</property>
+              <property name="text" type="string">Connecting</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">7</property>
+          <property name="relative_position" type="realpoint">710.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection 6</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_not_connected</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_not_connected#9</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_connect</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_connect#8</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">5</property>
+          <property name="target" type="long">5</property>
+          <property name="dock_point" type="long">21474836480</property>
+          <property name="control_points" type="listrealpoint">
+            <item>217.000000,180.000000</item>
+            <item>167.000000,150.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">8</property>
+              <property name="relative_position" type="realpoint">-147.000000,-18.000000</property>
+              <property name="size" type="realpoint">278.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; iot_not_connected() / [iot_connect()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">9</property>
+          <property name="relative_position" type="realpoint">396.000000,100.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">WorkingOnline</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">123.000000,50.000000</property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">10</property>
+              <property name="relative_position" type="realpoint">15.000000,5.000000</property>
+              <property name="size" type="realpoint">93.000000,15.000000</property>
+              <property name="text" type="string">WorkingOnline</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">11</property>
+          <property name="relative_position" type="realpoint">710.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection 2</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_connected</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_connected#4</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">5</property>
+          <property name="target" type="long">9</property>
+          <property name="dock_point" type="long">21474836480</property>
+          <property name="control_points" type="listrealpoint">
+            <item>350.000000,40.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">12</property>
+              <property name="relative_position" type="realpoint">-73.000000,2.000000</property>
+              <property name="size" type="realpoint">170.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; iot_connected() / [] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">13</property>
+          <property name="relative_position" type="realpoint">710.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection 4</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">cmd_go_offline</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::cmd_go_offline#10</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_disconnect</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_disconnect#11</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">9</property>
+          <property name="target" type="long">1</property>
+          <property name="target_offset" type="realpoint">0.000000,0.000000</property>
+          <property name="dock_point" type="long">38654705664</property>
+          <property name="control_points" type="listrealpoint">
+            <item>560.000000,40.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">14</property>
+              <property name="relative_position" type="realpoint">-108.000000,12.000000</property>
+              <property name="size" type="realpoint">277.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; cmd_go_offline() / [iot_disconnect()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">15</property>
+          <property name="relative_position" type="realpoint">710.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection 3</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_not_connected</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_not_connected#9</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_disconnect</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_disconnect#11</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">9</property>
+          <property name="target" type="long">1</property>
+          <property name="target_offset" type="realpoint">0.000000,0.000000</property>
+          <property name="dock_point" type="long">38654705664</property>
+          <property name="control_points" type="listrealpoint">
+            <item>558.000000,193.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">16</property>
+              <property name="relative_position" type="realpoint">-118.000000,-28.000000</property>
+              <property name="size" type="realpoint">297.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; iot_not_connected() / [iot_disconnect()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">17</property>
+          <property name="relative_position" type="realpoint">710.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection 7</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">cmd_go_online</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::cmd_go_online#12</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_connect</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_connect#8</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">19</property>
+          <property name="target" type="long">5</property>
+          <property name="source_offset" type="realpoint">0.000000,0.000000</property>
+          <property name="target_offset" type="realpoint">0.000000,0.000000</property>
+          <property name="dock_point" type="long">81604378624</property>
+          <property name="control_points" type="listrealpoint">
+            <item>500.000000,290.000000</item>
+            <item>330.000000,250.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">18</property>
+              <property name="relative_position" type="realpoint">-248.000000,-68.000000</property>
+              <property name="size" type="realpoint">258.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; cmd_go_online() / [iot_connect()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">19</property>
+          <property name="relative_position" type="realpoint">555.000000,240.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">WorkingOffline</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">104.000000,50.000000</property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">20</property>
+              <property name="relative_position" type="realpoint">5.000000,5.000000</property>
+              <property name="size" type="realpoint">94.000000,15.000000</property>
+              <property name="text" type="string">WorkingOffline</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">21</property>
+          <property name="relative_position" type="realpoint">710.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection 5</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_not_connected</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_not_connected#9</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">1</property>
+          <property name="target" type="long">19</property>
+          <property name="dock_point" type="long">4294967296</property>
+          <property name="control_points" type="listrealpoint">
+            <item>790.000000,210.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">22</property>
+              <property name="relative_position" type="realpoint">-108.000000,2.000000</property>
+              <property name="size" type="realpoint">197.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; iot_not_connected() / [] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">23</property>
+          <property name="relative_position" type="realpoint">710.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">cmd_go_online</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::cmd_go_online#12</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_connect</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_connect#8</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">3</property>
+          <property name="target" type="long">5</property>
+          <property name="dock_point" type="long">12884901888</property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">24</property>
+              <property name="relative_position" type="realpoint">-84.000000,-8.000000</property>
+              <property name="size" type="realpoint">258.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; cmd_go_online() / [iot_connect()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+      </diagram>
+    </object>
+  </object>
+  <object type="udCodePackageItem">
+    <property name="id" type="long">5</property>
+    <property name="name" type="string">Condition functions</property>
+    <object type="udConditionItem">
+      <property name="id" type="long">4</property>
+      <property name="name" type="string">iot_connected</property>
+      <property name="description" type="string">The connection has been stablished</property>
+      <property name="code" type="string">dre.iot_connected == true</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::iot_connected#4</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">9</property>
+      <property name="name" type="string">iot_not_connected</property>
+      <property name="description" type="string">The IoT is not connected</property>
+      <property name="code" type="string">dre.iot_connected == false</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::iot_not_connected#9</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">10</property>
+      <property name="name" type="string">cmd_go_offline</property>
+      <property name="description" type="string">A command to go offline has been received.</property>
+      <property name="code" type="string">dre.iot_go_offline == true</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::cmd_go_offline#10</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">12</property>
+      <property name="name" type="string">cmd_go_online</property>
+      <property name="description" type="string">A command has been received to go online.</property>
+      <property name="code" type="string">dre.iot_go_online == true</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::cmd_go_online#12</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">22</property>
+      <property name="name" type="string">iot_pub_tim_expired</property>
+      <property name="description" type="string">The publish timer has expired.</property>
+      <property name="code" type="string">dre.iot_publish_timer &gt;= CFG_PUBLISH_TIME</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::iot_pub_tim_expired#22</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">26</property>
+      <property name="name" type="string">emergency_req</property>
+      <property name="description" type="string">Se esta recibiendo una peticion de emergencia.</property>
+      <property name="code" type="string">dre.emgcy_button == true</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::emergency_req#26</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">29</property>
+      <property name="name" type="string">emgcy_qualified</property>
+      <property name="description" type="string">Emergencia cualificada</property>
+      <property name="code" type="string">(dre.emgcy_button == true) &amp;&amp; (dre.emgcy_timer &gt; CFG_EMGCY_QUALTIME)</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::emgcy_qualified#29</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">31</property>
+      <property name="name" type="string">emgcy_done</property>
+      <property name="description" type="string">El tiempo dedicado al rearme de la acción se ha producido.</property>
+      <property name="code" type="string">dre.emgcy_timer &gt;= CFG_EMGCY_ACTTIME</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::emgcy_done#31</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">42</property>
+      <property name="name" type="string">send_pulses</property>
+      <property name="description" type="string">There are pulses to be sent</property>
+      <property name="code" type="string">dre.pulses_to_send &gt; 0</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::send_pulses#42</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">45</property>
+      <property name="name" type="string">pulse_tim_expired_up</property>
+      <property name="description" type="string">The pulse timer has expired</property>
+      <property name="code" type="string">dre.pulses_timer &gt;= CFG_PULSE_TIMER_UP</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::pulse_tim_expired_up#45</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">56</property>
+      <property name="name" type="string">pulse_tim_expired_down</property>
+      <property name="description" type="string">Tiempo que debe pasar el pulso a nivel bajo.</property>
+      <property name="code" type="string">dre.pulses_timer &gt;= CFG_PULSE_TIMER_DOWN</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::pulse_tim_expired_down#56</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">62</property>
+      <property name="name" type="string">check_serial</property>
+      <property name="description" type="string">If the serial line has bytes waiting to be received</property>
+      <property name="code" type="string">Serial.available() &gt; 0</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::check_serial#62</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">66</property>
+      <property name="name" type="string">end_char_received</property>
+      <property name="description" type="string">The ending char has been received</property>
+      <property name="code" type="string">dre.incoming_bytes[dre.serial_counter-1] == '\n'</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::end_char_received#66</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">68</property>
+      <property name="name" type="string">cmd_present</property>
+      <property name="description" type="string">Al menos hay un comando esperando a ser servido.</property>
+      <property name="code" type="string">dre.cmd_counter != dre.cmd_base</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::cmd_present#68</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">69</property>
+      <property name="name" type="string">is_pulse_cmd</property>
+      <property name="description" type="string">The received command is of type pulse.</property>
+      <property name="code" type="string">dre.cmd_storage[dre.cmd_base][0] == 'p'</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::is_pulse_cmd#69</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udConditionItem">
+      <property name="id" type="long">73</property>
+      <property name="name" type="string">end_pulse_cmd</property>
+      <property name="description" type="string">Espera a que finalice el comando de pulso</property>
+      <property name="code" type="string">dre.pulses_to_send == 0</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::end_pulse_cmd#73</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">1</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+  </object>
+  <object type="udCodePackageItem">
+    <property name="id" type="long">7</property>
+    <property name="name" type="string">Action functions</property>
+    <object type="udActionItem">
+      <property name="id" type="long">8</property>
+      <property name="name" type="string">iot_connect</property>
+      <property name="description" type="string">Connect to IoT</property>
+      <property name="code" type="string">dre.iot_disconnect = false;
+
+dre.iot_connect = true;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::iot_connect#8</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">11</property>
+      <property name="name" type="string">iot_disconnect</property>
+      <property name="description" type="string">Disconnect the IoT</property>
+      <property name="code" type="string">dre.iot_connect = false;
+
+dre.iot_disconnect = true;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::iot_disconnect#11</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">18</property>
+      <property name="name" type="string">iot_init</property>
+      <property name="description" type="string">Initialize the IoT system</property>
+      <property name="code" type="string">dre.iot_go_online = true;
+
+dre.iot_go_offline = false;
+
+dre.iot_publish = false;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::iot_init#18</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">19</property>
+      <property name="name" type="string">iot_cmd_clear</property>
+      <property name="description" type="string">Clears the IoT commands.</property>
+      <property name="code" type="string">dre.iot_go_online = false;
+
+dre.iot_go_offline = false;
+
+dre.iot_publish = false;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::iot_cmd_clear#19</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">20</property>
+      <property name="name" type="string">iot_publish</property>
+      <property name="description" type="string">Publishes IoT information</property>
+      <property name="code" type="string">dre.iot_publish = true;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::iot_publish#20</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">21</property>
+      <property name="name" type="string">iot_pub_timer_rst</property>
+      <property name="description" type="string">Resets the IoT publish timer</property>
+      <property name="code" type="string">dre.iot_publish_timer = 0;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::iot_pub_timer_rst#21</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">23</property>
+      <property name="name" type="string">iot_pub_tim_incr</property>
+      <property name="description" type="string">Increments the IoT publish timer.</property>
+      <property name="code" type="string">dre.iot_publish_timer++;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::iot_pub_tim_incr#23</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">24</property>
+      <property name="name" type="string">iot_dont_publish</property>
+      <property name="description" type="string">The system must not publish data to IoT.</property>
+      <property name="code" type="string">dre.iot_publish = false;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::iot_dont_publish#24</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">27</property>
+      <property name="name" type="string">emgcy_tim_incr</property>
+      <property name="description" type="string">Incrementa el timer de filtrado del botón de emergencia.</property>
+      <property name="code" type="string">dre.emgcy_timer++;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::emgcy_tim_incr#27</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">28</property>
+      <property name="name" type="string">emgcy_tim_rst</property>
+      <property name="description" type="string">Resetea el timer de emergencia.</property>
+      <property name="code" type="string">dre.emgcy_timer = 0;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::emgcy_tim_rst#28</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">30</property>
+      <property name="name" type="string">emgcy_action</property>
+      <property name="description" type="string">Accion de emergencia (resetear el sillon, limpiar el tiempo pendiente...)</property>
+      <property name="code" type="string">dre.emgcy_action = true;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::emgcy_action#30</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">32</property>
+      <property name="name" type="string">emgcy_healed</property>
+      <property name="description" type="string">Curamos la situacion de emergencia.</property>
+      <property name="code" type="string">dre.emgcy_action = false;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::emgcy_healed#32</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">43</property>
+      <property name="name" type="string">send_pulse</property>
+      <property name="description" type="string">Begins pulse and decrements the number of pulses to send.</property>
+      <property name="code" type="string">dre.pulse_pin = true;
+dre.pulses_to_send--;
+dre.pulses_timer = 0;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::send_pulse#43</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">46</property>
+      <property name="name" type="string">clear_pulse</property>
+      <property name="description" type="string">Quita el pulso de la línea</property>
+      <property name="code" type="string">dre.pulse_pin = false;
+dre.pulses_timer = 0;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::clear_pulse#46</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">57</property>
+      <property name="name" type="string">pulse_tim_incr</property>
+      <property name="description" type="string">Incrementa el contador de pulsos.</property>
+      <property name="code" type="string">dre.pulses_timer++;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::pulse_tim_incr#57</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">63</property>
+      <property name="name" type="string">read_serial_byte</property>
+      <property name="description" type="string">Reads an input from the serial line</property>
+      <property name="code" type="string">dre.incoming_bytes[dre.serial_counter++] = Serial.read();</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::read_serial_byte#63</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">64</property>
+      <property name="name" type="string">reset_serial_counter</property>
+      <property name="description" type="string">Resets the serial counter</property>
+      <property name="code" type="string">dre.serial_counter = 0;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::reset_serial_counter#64</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">65</property>
+      <property name="name" type="string">store_received_command</property>
+      <property name="description" type="string">The command has been received and must be put in the command storage.</property>
+      <property name="code" type="string">process_received_command();</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::store_received_command#65</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">70</property>
+      <property name="name" type="string">reset_cmd_storage</property>
+      <property name="description" type="string">Resets the command storage</property>
+      <property name="code" type="string">dre.cmd_base = 0;&#xD;
+dre.cmd_counter = 0;&#xD;
+</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::reset_cmd_storage#70</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">71</property>
+      <property name="name" type="string">process_pulse_cmd</property>
+      <property name="description" type="string">Processes the pulse command</property>
+      <property name="code" type="string">dre.pulses_to_send += atoi(&amp;(dre.cmd_storage[dre.cmd_base][1]));</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::process_pulse_cmd#71</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+    <object type="udActionItem">
+      <property name="id" type="long">72</property>
+      <property name="name" type="string">jmp_next_cmd</property>
+      <property name="description" type="string">Pasa al siguiente comando de la lista</property>
+      <property name="code" type="string">dre.cmd_base = (dre.cmd_base + 1) % CFG_CMD_STORAGE_SIZE;</property>
+      <property name="scope" type="string">&lt;global&gt;</property>
+      <property name="signature" type="string">&lt;global&gt;::jmp_next_cmd#72</property>
+      <property name="inline" type="bool">1</property>
+      <property name="retval_data_type" type="int">10</property>
+      <property name="retval_value_type" type="int">0</property>
+      <property name="retval_data_modifier" type="int">0</property>
+      <property name="user_retval_decl_place" type="int">0</property>
+      <property name="function_modifier" type="int">0</property>
+    </object>
+  </object>
+  <object type="udPackageItem">
+    <property name="id" type="long">16</property>
+    <property name="name" type="string">Func</property>
+    <object type="udSStateChartDiagramItem">
+      <property name="id" type="long">17</property>
+      <property name="name" type="string">FuncMngr</property>
+      <property name="description" type="string">Diagram's description...</property>
+      <property name="diagram_type" type="string">Simple State Chart</property>
+      <property name="generate_code" type="bool">1</property>
+      <property name="output_file" type="string">&lt;default&gt;</property>
+      <property name="active_generator" type="string">udSStateChartGenerator</property>
+      <property name="active_algorithm" type="string">udLoopCaseAlgorithm</property>
+      <property name="input_action" type="string">&lt;none&gt;</property>
+      <property name="non_blocking" type="bool">1</property>
+      <property name="inline" type="bool">0</property>
+      <diagram>
+        <object type="umlInitialItem">
+          <property name="id" type="long">1</property>
+          <property name="relative_position" type="realpoint">60.000000,40.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udInitialElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Initial</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">20.000000,20.000000</property>
+          <property name="fill" type="brush">0,0,0,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">2</property>
+              <property name="relative_position" type="realpoint">0.000000,25.000000</property>
+              <property name="size" type="realpoint">35.000000,15.000000</property>
+              <property name="text" type="string">Initial</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">3</property>
+          <property name="relative_position" type="realpoint">210.000000,80.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Init</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">4</property>
+              <property name="relative_position" type="realpoint">40.000000,5.000000</property>
+              <property name="size" type="realpoint">20.000000,15.000000</property>
+              <property name="text" type="string">Init</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">5</property>
+          <property name="relative_position" type="realpoint">530.000000,90.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Working</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">6</property>
+              <property name="relative_position" type="realpoint">24.000000,5.000000</property>
+              <property name="size" type="realpoint">52.000000,15.000000</property>
+              <property name="text" type="string">Working</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">7</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <property name="priority" type="long">10</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_pub_tim_expired</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_pub_tim_expired#22</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_publish</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_publish#20</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_pub_timer_rst</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_pub_timer_rst#21</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">5</property>
+          <property name="target" type="long">5</property>
+          <property name="dock_point" type="long">21474836480</property>
+          <property name="control_points" type="listrealpoint">
+            <item>710.000000,170.000000</item>
+            <item>740.000000,120.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">8</property>
+              <property name="relative_position" type="realpoint">-66.000000,-37.000000</property>
+              <property name="size" type="realpoint">445.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; 10 : iot_pub_tim_expired() / [iot_publish(), iot_pub_timer_rst()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">9</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_connected</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_connected#4</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_cmd_clear</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_cmd_clear#19</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_publish</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_publish#20</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_pub_timer_rst</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_pub_timer_rst#21</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">3</property>
+          <property name="target" type="long">5</property>
+          <property name="dock_point" type="long">12884901888</property>
+          <property name="control_points" type="listrealpoint">
+            <item>400.000000,60.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">10</property>
+              <property name="relative_position" type="realpoint">-147.000000,3.000000</property>
+              <property name="size" type="realpoint">479.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; iot_connected() / [iot_cmd_clear(), iot_publish(), iot_pub_timer_rst()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">11</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_pub_tim_incr</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_pub_tim_incr#23</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_dont_publish</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_dont_publish#24</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">5</property>
+          <property name="target" type="long">5</property>
+          <property name="dock_point" type="long">21474836480</property>
+          <property name="control_points" type="listrealpoint">
+            <item>490.000000,170.000000</item>
+            <item>440.000000,160.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">12</property>
+              <property name="relative_position" type="realpoint">-144.000000,-27.000000</property>
+              <property name="size" type="realpoint">309.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [iot_pub_tim_incr(), iot_dont_publish()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">13</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_not_connected</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_not_connected#9</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_init</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_init#18</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_dont_publish</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_dont_publish#24</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">5</property>
+          <property name="target" type="long">3</property>
+          <property name="dock_point" type="long">21474836480</property>
+          <property name="control_points" type="listrealpoint">
+            <item>630.000000,220.000000</item>
+            <item>450.000000,240.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">14</property>
+              <property name="relative_position" type="realpoint">-261.000000,3.000000</property>
+              <property name="size" type="realpoint">371.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; iot_not_connected() / [iot_init(), iot_dont_publish()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">15</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_not_connected</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_not_connected#9</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_dont_publish</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_dont_publish#24</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">3</property>
+          <property name="target" type="long">3</property>
+          <property name="dock_point" type="long">12884901888</property>
+          <property name="control_points" type="listrealpoint">
+            <item>200.000000,160.000000</item>
+            <item>170.000000,140.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">16</property>
+              <property name="relative_position" type="realpoint">-159.000000,-17.000000</property>
+              <property name="size" type="realpoint">311.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; iot_not_connected() / [iot_dont_publish()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">17</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">iot_init</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::iot_init#18</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">1</property>
+          <property name="target" type="long">3</property>
+          <property name="dock_point" type="long">4294967296</property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">18</property>
+              <property name="relative_position" type="realpoint">-46.000000,-7.000000</property>
+              <property name="size" type="realpoint">125.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [iot_init()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+      </diagram>
+    </object>
+    <object type="udSStateChartDiagramItem">
+      <property name="id" type="long">25</property>
+      <property name="name" type="string">Emergency</property>
+      <property name="description" type="string">Control del botón de emergencia.</property>
+      <property name="diagram_type" type="string">Simple State Chart</property>
+      <property name="generate_code" type="bool">1</property>
+      <property name="output_file" type="string">&lt;default&gt;</property>
+      <property name="active_generator" type="string">udSStateChartGenerator</property>
+      <property name="active_algorithm" type="string">udLoopCaseAlgorithm</property>
+      <property name="input_action" type="string">&lt;none&gt;</property>
+      <property name="non_blocking" type="bool">1</property>
+      <property name="inline" type="bool">0</property>
+      <diagram>
+        <object type="umlInitialItem">
+          <property name="id" type="long">1</property>
+          <property name="relative_position" type="realpoint">80.000000,50.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udInitialElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Initial</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">20.000000,20.000000</property>
+          <property name="fill" type="brush">0,0,0,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">2</property>
+              <property name="relative_position" type="realpoint">0.000000,25.000000</property>
+              <property name="size" type="realpoint">35.000000,15.000000</property>
+              <property name="text" type="string">Initial</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">3</property>
+          <property name="relative_position" type="realpoint">170.000000,120.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Normal</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">4</property>
+              <property name="relative_position" type="realpoint">27.000000,5.000000</property>
+              <property name="size" type="realpoint">46.000000,15.000000</property>
+              <property name="text" type="string">Normal</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">5</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+            </object>
+          </property>
+          <property name="source" type="long">1</property>
+          <property name="target" type="long">3</property>
+          <property name="dock_point" type="long">4294967296</property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">6</property>
+              <property name="relative_position" type="realpoint">-23.000000,-7.000000</property>
+              <property name="size" type="realpoint">73.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">7</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+            </object>
+          </property>
+          <property name="source" type="long">13</property>
+          <property name="target" type="long">3</property>
+          <property name="dock_point" type="long">55834574848</property>
+          <property name="control_points" type="listrealpoint">
+            <item>380.000000,250.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">8</property>
+              <property name="relative_position" type="realpoint">-23.000000,-7.000000</property>
+              <property name="size" type="realpoint">73.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">9</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">emergency_req</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::emergency_req#26</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">emgcy_tim_rst</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::emgcy_tim_rst#28</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">3</property>
+          <property name="target" type="long">13</property>
+          <property name="dock_point" type="long">12884901888</property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">10</property>
+              <property name="relative_position" type="realpoint">-116.000000,-7.000000</property>
+              <property name="size" type="realpoint">278.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; emergency_req() / [emgcy_tim_rst()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">11</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <property name="priority" type="long">20</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">emergency_req</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::emergency_req#26</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">emgcy_tim_incr</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::emgcy_tim_incr#27</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">13</property>
+          <property name="target" type="long">13</property>
+          <property name="dock_point" type="long">55834574848</property>
+          <property name="control_points" type="listrealpoint">
+            <item>580.000000,110.000000</item>
+            <item>630.000000,110.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">12</property>
+              <property name="relative_position" type="realpoint">-63.000000,3.000000</property>
+              <property name="size" type="realpoint">313.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; 20 : emergency_req() / [emgcy_tim_incr()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">13</property>
+          <property name="relative_position" type="realpoint">558.000000,170.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">WarningFilter</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">104.000000,50.000000</property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">14</property>
+              <property name="relative_position" type="realpoint">10.000000,5.000000</property>
+              <property name="size" type="realpoint">84.000000,15.000000</property>
+              <property name="text" type="string">WarningFilter</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">15</property>
+          <property name="relative_position" type="realpoint">570.000000,340.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Emergency</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">16</property>
+              <property name="relative_position" type="realpoint">16.000000,5.000000</property>
+              <property name="size" type="realpoint">69.000000,15.000000</property>
+              <property name="text" type="string">Emergency</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">17</property>
+          <property name="relative_position" type="realpoint">179.000000,340.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Healing</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">102.000000,50.000000</property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">18</property>
+              <property name="relative_position" type="realpoint">27.000000,5.000000</property>
+              <property name="size" type="realpoint">48.000000,15.000000</property>
+              <property name="text" type="string">Healing</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">19</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <property name="priority" type="long">10</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">emgcy_qualified</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::emgcy_qualified#29</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">emgcy_action</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::emgcy_action#30</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">emgcy_tim_rst</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::emgcy_tim_rst#28</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">13</property>
+          <property name="target" type="long">15</property>
+          <property name="dock_point" type="long">55834574848</property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">20</property>
+              <property name="relative_position" type="realpoint">-174.000000,-7.000000</property>
+              <property name="size" type="realpoint">415.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; 10 : emgcy_qualified() / [emgcy_action(), emgcy_tim_rst()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">21</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">emergency_req</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::emergency_req#26</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">17</property>
+          <property name="target" type="long">17</property>
+          <property name="dock_point" type="long">73014444032</property>
+          <property name="control_points" type="listrealpoint">
+            <item>210.000000,410.000000</item>
+            <item>240.000000,420.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">22</property>
+              <property name="relative_position" type="realpoint">-51.000000,-7.000000</property>
+              <property name="size" type="realpoint">178.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; emergency_req() / [] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">23</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">emgcy_healed</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::emgcy_healed#32</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">17</property>
+          <property name="target" type="long">3</property>
+          <property name="dock_point" type="long">73014444032</property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">24</property>
+              <property name="relative_position" type="realpoint">-69.000000,-7.000000</property>
+              <property name="size" type="realpoint">171.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [emgcy_healed()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">25</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">emgcy_tim_incr</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::emgcy_tim_incr#27</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">15</property>
+          <property name="target" type="long">15</property>
+          <property name="dock_point" type="long">64424509440</property>
+          <property name="control_points" type="listrealpoint">
+            <item>610.000000,440.000000</item>
+            <item>680.000000,440.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">26</property>
+              <property name="relative_position" type="realpoint">-67.000000,-27.000000</property>
+              <property name="size" type="realpoint">180.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [emgcy_tim_incr()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">27</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <property name="priority" type="long">10</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">emgcy_done</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::emgcy_done#31</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">15</property>
+          <property name="target" type="long">17</property>
+          <property name="dock_point" type="long">64424509440</property>
+          <property name="control_points" type="listrealpoint">
+            <item>430.000000,320.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">28</property>
+              <property name="relative_position" type="realpoint">-154.000000,3.000000</property>
+              <property name="size" type="realpoint">189.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; 10 : emgcy_done() / [] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+      </diagram>
+    </object>
+    <object type="udSStateChartDiagramItem">
+      <property name="id" type="long">41</property>
+      <property name="name" type="string">PulsingCmd</property>
+      <property name="description" type="string">Diagram's description...</property>
+      <property name="diagram_type" type="string">Simple State Chart</property>
+      <property name="generate_code" type="bool">1</property>
+      <property name="output_file" type="string">&lt;default&gt;</property>
+      <property name="active_generator" type="string">udSStateChartGenerator</property>
+      <property name="active_algorithm" type="string">udLoopCaseAlgorithm</property>
+      <property name="input_action" type="string">&lt;none&gt;</property>
+      <property name="non_blocking" type="bool">1</property>
+      <property name="inline" type="bool">0</property>
+      <diagram>
+        <object type="umlInitialItem">
+          <property name="id" type="long">1</property>
+          <property name="relative_position" type="realpoint">80.000000,40.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udInitialElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Initial</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">20.000000,20.000000</property>
+          <property name="fill" type="brush">0,0,0,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">2</property>
+              <property name="relative_position" type="realpoint">0.000000,25.000000</property>
+              <property name="size" type="realpoint">35.000000,15.000000</property>
+              <property name="text" type="string">Initial</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">3</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+            </object>
+          </property>
+          <property name="source" type="long">1</property>
+          <property name="target" type="long">5</property>
+          <property name="dock_point" type="long">4294967296</property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">4</property>
+              <property name="relative_position" type="realpoint">-23.000000,-7.000000</property>
+              <property name="size" type="realpoint">73.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">5</property>
+          <property name="relative_position" type="realpoint">170.000000,100.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Waiting</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">6</property>
+              <property name="relative_position" type="realpoint">27.000000,5.000000</property>
+              <property name="size" type="realpoint">47.000000,15.000000</property>
+              <property name="text" type="string">Waiting</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">7</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+            </object>
+          </property>
+          <property name="source" type="long">15</property>
+          <property name="target" type="long">5</property>
+          <property name="dock_point" type="long">64424509440</property>
+          <property name="control_points" type="listrealpoint">
+            <item>940.000000,320.000000</item>
+            <item>440.000000,400.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">8</property>
+              <property name="relative_position" type="realpoint">-24.000000,-7.000000</property>
+              <property name="size" type="realpoint">73.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">9</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">send_pulses</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::send_pulses#42</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">send_pulse</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::send_pulse#43</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">5</property>
+          <property name="target" type="long">11</property>
+          <property name="dock_point" type="long">21474836480</property>
+          <property name="control_points" type="listrealpoint">
+            <item>340.000000,60.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">10</property>
+              <property name="relative_position" type="realpoint">-127.000000,3.000000</property>
+              <property name="size" type="realpoint">238.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; send_pulses() / [send_pulse()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">11</property>
+          <property name="relative_position" type="realpoint">418.000000,100.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">SendPulseUp</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">105.000000,50.000000</property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">12</property>
+              <property name="relative_position" type="realpoint">12.000000,5.000000</property>
+              <property name="size" type="realpoint">81.000000,15.000000</property>
+              <property name="text" type="string">SendPulseUp</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">13</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <property name="priority" type="long">10</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">send_pulses</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::send_pulses#42</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">send_pulse</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::send_pulse#43</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">15</property>
+          <property name="target" type="long">11</property>
+          <property name="source_offset" type="realpoint">0.000000,0.000000</property>
+          <property name="dock_point" type="long">64424509440</property>
+          <property name="control_points" type="listrealpoint">
+            <item>760.000000,230.000000</item>
+            <item>490.000000,250.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">14</property>
+              <property name="relative_position" type="realpoint">-156.000000,3.000000</property>
+              <property name="size" type="realpoint">266.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; 10 : send_pulses() / [send_pulse()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">15</property>
+          <property name="relative_position" type="realpoint">854.000000,100.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">SendPulseEnd</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">112.000000,50.000000</property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">16</property>
+              <property name="relative_position" type="realpoint">13.000000,5.000000</property>
+              <property name="size" type="realpoint">87.000000,15.000000</property>
+              <property name="text" type="string">SendPulseEnd</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">17</property>
+          <property name="relative_position" type="realpoint">637.000000,100.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">SendPulseDown</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">127.000000,50.000000</property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">18</property>
+              <property name="relative_position" type="realpoint">14.000000,5.000000</property>
+              <property name="size" type="realpoint">99.000000,15.000000</property>
+              <property name="text" type="string">SendPulseDown</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">19</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <property name="priority" type="long">10</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">pulse_tim_expired_down</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::pulse_tim_expired_down#56</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">17</property>
+          <property name="target" type="long">15</property>
+          <property name="dock_point" type="long">73014444032</property>
+          <property name="control_points" type="listrealpoint">
+            <item>810.000000,60.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">20</property>
+              <property name="relative_position" type="realpoint">-99.000000,13.000000</property>
+              <property name="size" type="realpoint">267.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; 10 : pulse_tim_expired_down() / [] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">21</property>
+          <property name="relative_position" type="realpoint">500.000000,200.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">pulse_tim_incr</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::pulse_tim_incr#57</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">11</property>
+          <property name="target" type="long">11</property>
+          <property name="dock_point" type="long">47244640256</property>
+          <property name="control_points" type="listrealpoint">
+            <item>410.000000,200.000000</item>
+            <item>370.000000,150.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">22</property>
+              <property name="relative_position" type="realpoint">-102.000000,-9.000000</property>
+              <property name="size" type="realpoint">173.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [pulse_tim_incr()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">23</property>
+          <property name="relative_position" type="realpoint">500.000000,200.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">pulse_tim_incr</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::pulse_tim_incr#57</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">17</property>
+          <property name="target" type="long">17</property>
+          <property name="dock_point" type="long">73014444032</property>
+          <property name="control_points" type="listrealpoint">
+            <item>640.000000,180.000000</item>
+            <item>580.000000,160.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">24</property>
+              <property name="relative_position" type="realpoint">-102.000000,-9.000000</property>
+              <property name="size" type="realpoint">173.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [pulse_tim_incr()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">25</property>
+          <property name="relative_position" type="realpoint">830.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <property name="priority" type="long">10</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">pulse_tim_expired_up</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::pulse_tim_expired_up#45</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">clear_pulse</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::clear_pulse#46</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">11</property>
+          <property name="target" type="long">17</property>
+          <property name="dock_point" type="long">47244640256</property>
+          <property name="control_points" type="listrealpoint">
+            <item>580.000000,50.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">26</property>
+              <property name="relative_position" type="realpoint">-166.000000,-7.000000</property>
+              <property name="size" type="realpoint">328.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; 10 : pulse_tim_expired_up() / [clear_pulse()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+      </diagram>
+    </object>
+    <object type="udSStateChartDiagramItem">
+      <property name="id" type="long">61</property>
+      <property name="name" type="string">ReceiveSysCmd</property>
+      <property name="description" type="string">Decode system commands from serial line.</property>
+      <property name="diagram_type" type="string">Simple State Chart</property>
+      <property name="generate_code" type="bool">1</property>
+      <property name="output_file" type="string">&lt;default&gt;</property>
+      <property name="active_generator" type="string">udSStateChartGenerator</property>
+      <property name="active_algorithm" type="string">udLoopCaseAlgorithm</property>
+      <property name="input_action" type="string">&lt;none&gt;</property>
+      <property name="non_blocking" type="bool">1</property>
+      <property name="inline" type="bool">0</property>
+      <diagram>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">1</property>
+          <property name="relative_position" type="realpoint">190.000000,130.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Waiting</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">2</property>
+              <property name="relative_position" type="realpoint">27.000000,5.000000</property>
+              <property name="size" type="realpoint">47.000000,15.000000</property>
+              <property name="text" type="string">Waiting</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">3</property>
+          <property name="relative_position" type="realpoint">820.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+            </object>
+          </property>
+          <property name="source" type="long">5</property>
+          <property name="target" type="long">1</property>
+          <property name="dock_point" type="long">21474836480</property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">4</property>
+              <property name="relative_position" type="realpoint">-23.000000,-7.000000</property>
+              <property name="size" type="realpoint">73.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">5</property>
+          <property name="relative_position" type="realpoint">480.000000,130.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">ReadChar</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">6</property>
+              <property name="relative_position" type="realpoint">20.000000,5.000000</property>
+              <property name="size" type="realpoint">60.000000,15.000000</property>
+              <property name="text" type="string">ReadChar</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlInitialItem">
+          <property name="id" type="long">7</property>
+          <property name="relative_position" type="realpoint">90.000000,30.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udInitialElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Initial</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">20.000000,20.000000</property>
+          <property name="fill" type="brush">0,0,0,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">8</property>
+              <property name="relative_position" type="realpoint">0.000000,25.000000</property>
+              <property name="size" type="realpoint">35.000000,15.000000</property>
+              <property name="text" type="string">Initial</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">9</property>
+          <property name="relative_position" type="realpoint">820.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">reset_serial_counter</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::reset_serial_counter#64</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">7</property>
+          <property name="target" type="long">1</property>
+          <property name="dock_point" type="long">30064771072</property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">10</property>
+              <property name="relative_position" type="realpoint">-65.000000,3.000000</property>
+              <property name="size" type="realpoint">208.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [reset_serial_counter()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">11</property>
+          <property name="relative_position" type="realpoint">820.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <property name="priority" type="long">10</property>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">store_received_command</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::store_received_command#65</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">reset_serial_counter</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::reset_serial_counter#64</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">end_char_received</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::end_char_received#66</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">5</property>
+          <property name="target" type="long">1</property>
+          <property name="dock_point" type="long">21474836480</property>
+          <property name="control_points" type="listrealpoint">
+            <item>410.000000,250.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">12</property>
+              <property name="relative_position" type="realpoint">-155.000000,-27.000000</property>
+              <property name="size" type="realpoint">538.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; 10 : end_char_received() / [store_received_command(), reset_serial_counter()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">13</property>
+          <property name="relative_position" type="realpoint">820.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">check_serial</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::check_serial#62</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">read_serial_byte</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::read_serial_byte#63</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">1</property>
+          <property name="target" type="long">5</property>
+          <property name="dock_point" type="long">4294967296</property>
+          <property name="control_points" type="listrealpoint">
+            <item>370.000000,70.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">14</property>
+              <property name="relative_position" type="realpoint">-110.000000,3.000000</property>
+              <property name="size" type="realpoint">268.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; check_serial() / [read_serial_byte()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+      </diagram>
+    </object>
+    <object type="udSStateChartDiagramItem">
+      <property name="id" type="long">67</property>
+      <property name="name" type="string">DispatchSysCmd</property>
+      <property name="description" type="string">Decide el comando a ejecutar y lo lanza.</property>
+      <property name="diagram_type" type="string">Simple State Chart</property>
+      <property name="generate_code" type="bool">1</property>
+      <property name="output_file" type="string">&lt;default&gt;</property>
+      <property name="active_generator" type="string">udSStateChartGenerator</property>
+      <property name="active_algorithm" type="string">udLoopCaseAlgorithm</property>
+      <property name="input_action" type="string">&lt;none&gt;</property>
+      <property name="non_blocking" type="bool">1</property>
+      <property name="inline" type="bool">0</property>
+      <diagram>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">1</property>
+          <property name="relative_position" type="realpoint">200.000000,140.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Waiting</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">2</property>
+              <property name="relative_position" type="realpoint">27.000000,5.000000</property>
+              <property name="size" type="realpoint">47.000000,15.000000</property>
+              <property name="text" type="string">Waiting</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">3</property>
+          <property name="relative_position" type="realpoint">500.000000,140.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">DecodeCmd</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">4</property>
+              <property name="relative_position" type="realpoint">12.000000,5.000000</property>
+              <property name="size" type="realpoint">76.000000,15.000000</property>
+              <property name="text" type="string">DecodeCmd</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlSimpleStateItem">
+          <property name="id" type="long">5</property>
+          <property name="relative_position" type="realpoint">790.000000,140.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udSimpleStateElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">PulseCmd</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="fill" type="brush">254,253,211,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">6</property>
+              <property name="relative_position" type="realpoint">19.000000,5.000000</property>
+              <property name="size" type="realpoint">62.000000,15.000000</property>
+              <property name="text" type="string">PulseCmd</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">7</property>
+          <property name="relative_position" type="realpoint">820.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">reset_cmd_storage</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::reset_cmd_storage#70</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">9</property>
+          <property name="target" type="long">1</property>
+          <property name="dock_point" type="long">38654705664</property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">8</property>
+              <property name="relative_position" type="realpoint">-94.000000,3.000000</property>
+              <property name="size" type="realpoint">200.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt;  / [reset_cmd_storage()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlInitialItem">
+          <property name="id" type="long">9</property>
+          <property name="relative_position" type="realpoint">140.000000,50.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udInitialElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Initial</property>
+              <property name="description" type="string">Diagram element's description...</property>
+            </object>
+          </property>
+          <property name="size" type="realpoint">20.000000,20.000000</property>
+          <property name="fill" type="brush">0,0,0,255 100</property>
+          <property name="title" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">10</property>
+              <property name="relative_position" type="realpoint">0.000000,25.000000</property>
+              <property name="size" type="realpoint">35.000000,15.000000</property>
+              <property name="text" type="string">Initial</property>
+              <property name="label_type" type="int">1</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">11</property>
+          <property name="relative_position" type="realpoint">820.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">cmd_present</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::cmd_present#68</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">1</property>
+          <property name="target" type="long">3</property>
+          <property name="dock_point" type="long">4294967296</property>
+          <property name="control_points" type="listrealpoint">
+            <item>430.000000,90.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">12</property>
+              <property name="relative_position" type="realpoint">-95.000000,3.000000</property>
+              <property name="size" type="realpoint">163.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; cmd_present() / [] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">13</property>
+          <property name="relative_position" type="realpoint">820.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">is_pulse_cmd</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::is_pulse_cmd#69</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">process_pulse_cmd</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::process_pulse_cmd#71</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">3</property>
+          <property name="target" type="long">5</property>
+          <property name="dock_point" type="long">12884901888</property>
+          <property name="control_points" type="listrealpoint">
+            <item>700.000000,100.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">14</property>
+              <property name="relative_position" type="realpoint">-129.000000,-7.000000</property>
+              <property name="size" type="realpoint">297.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; is_pulse_cmd() / [process_pulse_cmd()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+        <object type="umlTransitionItem">
+          <property name="id" type="long">15</property>
+          <property name="relative_position" type="realpoint">820.000000,330.000000</property>
+          <property name="halign" type="long">-12884901888</property>
+          <property name="user_data" type="serializabledynamic">
+            <object type="udTransElementItem">
+              <property name="id" type="long">0</property>
+              <property name="name" type="string">Transition connection</property>
+              <property name="description" type="string">Transition's description...</property>
+              <object type="udActionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">jmp_next_cmd</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::jmp_next_cmd#72</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+              <object type="udConditionLinkItem">
+                <property name="id" type="long">-1</property>
+                <property name="name" type="string">end_pulse_cmd</property>
+                <property name="description" type="string">Link description...</property>
+                <property name="original_code" type="string">&lt;global&gt;::end_pulse_cmd#73</property>
+                <property name="scope" type="string">&lt;global&gt;</property>
+              </object>
+            </object>
+          </property>
+          <property name="source" type="long">5</property>
+          <property name="target" type="long">1</property>
+          <property name="dock_point" type="long">21474836480</property>
+          <property name="control_points" type="listrealpoint">
+            <item>730.000000,260.000000</item>
+            <item>390.000000,260.000000</item>
+          </property>
+          <property name="label" type="serializabledynamicnocreate">
+            <object type="uddLabelElement">
+              <property name="id" type="long">16</property>
+              <property name="relative_position" type="realpoint">-118.000000,-7.000000</property>
+              <property name="size" type="realpoint">280.000000,15.000000</property>
+              <property name="text" type="string">&lt;&lt; end_pulse_cmd() / [jmp_next_cmd()] &gt;&gt;</property>
+              <property name="label_type" type="int">3</property>
+            </object>
+          </property>
+        </object>
+      </diagram>
+    </object>
+  </object>
+</project>
