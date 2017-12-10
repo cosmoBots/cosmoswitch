@@ -56,14 +56,6 @@ void iot_set_suscriptions(void){
 
   #ifdef CFG_USE_RELAY_SET
   for (i = 0; i < CFG_RELAYSET_NUMBER; i++){
-    relayset_cmd_labels[i] = String("/v1.6/devices/") +
-    String(DEVICE_LABEL) +
-    String("/") +
-    String(CMD_RELAYSET_ACTION_LABEL) +
-    i +
-    String("/lv");
-    client.subscribe(relayset_cmd_labels[i].c_str());
-    client.loop();
     relayset_ovr_labels[i] = String("/v1.6/devices/") +
     String(DEVICE_LABEL) +
     String("/") +
@@ -71,6 +63,14 @@ void iot_set_suscriptions(void){
     i +
     String("/lv");
     client.subscribe(relayset_ovr_labels[i].c_str());
+    client.loop();
+    relayset_cmd_labels[i] = String("/v1.6/devices/") +
+    String(DEVICE_LABEL) +
+    String("/") +
+    String(CMD_RELAYSET_ACTION_LABEL) +
+    i +
+    String("/lv");
+    client.subscribe(relayset_cmd_labels[i].c_str());
     client.loop();
   }
   #endif
@@ -82,7 +82,7 @@ void callback_ovr(char* topic, byte* payload, unsigned int length) {
   memcpy(p, payload, length);
   p[length] = NULL;
   String message(p);
-  Serial.println(topic);
+  Serial.print("***********"); Serial.println(topic);
   if (strcmp_P(topic, "/v1.6/devices/"DEVICE_LABEL"/"OVR_EMGCY_ACTION_LABEL"/lv")==0){
     if (message == "0") {
       dre.ovr_emgcy_action = false;
@@ -124,9 +124,21 @@ void callback_ovr(char* topic, byte* payload, unsigned int length) {
       if (strcmp_P(topic, relayset_ovr_labels[i].c_str())==0){
         Serial.print(i);
         if (message == "0") {
-          Serial.println(" Recibido 0");
+          Serial.println(" Relay: Not Override");
+          dre.ovr_relay_action[i] = false;
         } else {
-          Serial.println(" Recibido 1");
+          Serial.println(" Relay: Override");
+          dre.ovr_relay_action[i] = true;
+        }
+      }
+      if (strcmp_P(topic, relayset_cmd_labels[i].c_str())==0){
+        Serial.print(i);
+        if (message == "0") {
+          Serial.println(" Relay: Off");
+          dre.cmd_relay_action[i] = false;
+        } else {
+          Serial.println(" Relay: On");
+          dre.cmd_relay_action[i] = true;
         }
       }
     }

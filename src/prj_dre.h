@@ -42,6 +42,13 @@ typedef struct {
   int cmd_base;
   char cmd_storage[CFG_CMD_STORAGE_SIZE][CFG_CMD_LENGTH];
 
+  #ifdef CFG_USE_RELAY_SET
+  bool ovr_relay_action[CFG_RELAYSET_NUMBER];
+  bool cmd_relay_action[CFG_RELAYSET_NUMBER];
+  bool relay_action[CFG_RELAYSET_NUMBER];
+  bool relay_action_pin[CFG_RELAYSET_NUMBER];
+  #endif
+
 }t_dre;
 
 extern t_dre dre;

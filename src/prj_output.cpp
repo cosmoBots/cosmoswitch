@@ -69,8 +69,18 @@ void prj_output(void){
 
   #ifdef CFG_USE_RELAY_SET
   for (i = 0; i < CFG_RELAYSET_NUMBER; i++){
-    digitalWrite(relay_set[i],HIGH);
+    if (dre.ovr_relay_action[i] == true) {
+      dre.relay_action_pin[i] = dre.cmd_relay_action[i];
+    } else {
+      dre.relay_action_pin[i] = dre.relay_action[i];
+    }
+    if (dre.relay_action_pin[i] == true){
+      digitalWrite(relay_set[i],HIGH);
+    } else {
+      digitalWrite(relay_set[i],LOW);
+    }
   }
   #endif
+
 
 }

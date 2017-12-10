@@ -36,4 +36,12 @@ void dre_init(void){
   }
   dre.cmd_counter = 0;
 
+  #ifdef CFG_USE_RELAY_SET
+  for (i = 0; i < CFG_RELAYSET_NUMBER; i++){
+    dre.ovr_relay_action[i] = false;
+    dre.cmd_relay_action[i] = true;
+    dre.relay_action[i] = false;
+
+  }
+  #endif
 }
