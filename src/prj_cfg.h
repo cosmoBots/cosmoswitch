@@ -95,7 +95,7 @@
 #endif
 
 #ifdef CFG_USE_WIFI
-#if 0
+#if 1
 #define WIFISSID "MCC_PUBLICO" // Put your WifiSSID here
 #define PASSWORD "" // Put your wifi password here
 #else

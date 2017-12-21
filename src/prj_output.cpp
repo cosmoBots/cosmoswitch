@@ -74,10 +74,10 @@ void prj_output(void){
     } else {
       dre.relay_action_pin[i] = dre.relay_action[i];
     }
-    if (dre.relay_action_pin[i] == true){
+    if (dre.relay_action_pin[i] == false){
       digitalWrite(relay_set[i],HIGH);
     } else {
-      digitalWrite(relay_set[i],LOW);
+        digitalWrite(relay_set[i],LOW);
     }
   }
   #endif
