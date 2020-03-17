@@ -3,3 +3,7 @@
 .piolibdeps
 .clang_complete
 .gcc-flags.json
+.pio
+src/prj_cfg.h
+src/prj_cfg.h.secret
+

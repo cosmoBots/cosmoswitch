@@ -7,6 +7,8 @@
 #include <ESP8266WiFi.h>
 #elif ARDUINO_ESP8266_NODEMCU
 #include <ESP8266WiFi.h>
+#elif ARDUINO_ESP8266_ESP01
+#include <ESP8266WiFi.h>
 #elif ESP32_DEV
 #include <WiFi.h>
 #else
@@ -32,6 +34,7 @@ const char * VARIABLE_LABEL_BAT = "bat"; // Assign the variable label
 const char * VARIABLE_LABEL_EMGCY_ACTION= "emgcy_action"; // Assign the variable label
 const char * VARIABLE_LABEL_EMGCY_ACTION_PIN= "emgcy_action_pin"; // Assign the variable label
 const char * VARIABLE_LABEL_PULSES_TO_SEND= "pulses_to_send"; // Assign the variable label
+const char * VARIABLE_LABEL_RECONN_COUNTER = "reconnect_counter"; // Assign the variable label
 
 /****************************************
 * Auxiliar Functions
@@ -121,6 +124,7 @@ void callback_ovr(char* topic, byte* payload, unsigned int length) {
     }
     #ifdef CFG_USE_RELAY_SET
     for (i = 0; i < CFG_RELAYSET_NUMBER; i++){
+#ifdef CFG_RELAY_USE_OVERRIDE      
       if (strcmp_P(topic, relayset_ovr_labels[i].c_str())==0){
         Serial.print(i);
         if (message == "0") {
@@ -131,6 +135,7 @@ void callback_ovr(char* topic, byte* payload, unsigned int length) {
           dre.ovr_relay_action[i] = true;
         }
       }
+#endif
       if (strcmp_P(topic, relayset_cmd_labels[i].c_str())==0){
         Serial.print(i);
         if (message == "0") {
@@ -149,6 +154,27 @@ void callback_ovr(char* topic, byte* payload, unsigned int length) {
   Serial.println();
 }
 
+int reconnection_counter = 1;
+
+void iot_say_hello(void) {
+  bool ret = false;
+
+  dtostrf(reconnection_counter++, 4, 0, str_bat);
+  sprintf(topic, "%s%s", "/v1.6/devices/", DEVICE_LABEL);
+  sprintf(dre.iot_payload, "%s", ""); // Cleans the payload
+  sprintf(dre.iot_payload, "{\"%s\": %s}", VARIABLE_LABEL_RECONN_COUNTER, str_bat); // Adds the variable label
+#ifdef DEBUG_IOT
+  Serial.print(topic);Serial.print(": ");Serial.println(dre.iot_payload);
+#endif
+  ret = client.publish(topic, dre.iot_payload);
+  if (ret == false) {
+    Serial.println("Publication failed!");
+  } else {
+#ifdef DEBUG_IOT
+    Serial.println("Publication worked!");
+#endif
+    }
+}
 void reconnect() {
   // Loop until we're reconnected
   while (!client.connected()) {
@@ -157,6 +183,11 @@ void reconnect() {
     // Attemp to connect
     if (client.connect(MQTT_CLIENT_NAME, TOKEN, "")) {
       Serial.println("Connected");
+#ifdef CFG_IOT_ONLY_RX
+      // In the case we don't send data, we need a message to say 
+      // we have been reconnected
+      iot_say_hello();
+#endif       
       iot_set_suscriptions();
     } else {
       Serial.print("Failed, rc=");
@@ -191,7 +222,7 @@ void iot_init(void){
   #ifdef CFG_USE_MQTT
   client.setServer(mqttBroker, 1883);
   client.setCallback(callback_ovr);
-  iot_set_suscriptions();
+  iot_set_suscriptions(); 
   #endif
 }
 
@@ -234,8 +265,8 @@ void prj_iot(){
       iot_set_suscriptions();
     }
   }
-
   if (client.connected() && dre.iot_publish == true) {
+#ifndef CFG_IOT_ONLY_RX
     #ifdef DEBUG_IOT
     Serial.print("Connecting to IoT server with counter "); Serial.println(payload_counter);
     #endif
@@ -280,7 +311,7 @@ void prj_iot(){
       Serial.println(dre.iot_payload);
     }
     #endif
-
+#endif
     client.loop();
   }
   dre.iot_connected = client.connected();

@@ -57,8 +57,8 @@ void loop() {
   #ifdef CFG_USE_IOT
   FuncMngr();
   #ifdef DEBUG_IOT
-  Serial.print("dre.iot_connect: ");Serial.println(dre.iot_connect);
-  Serial.print("dre.iot_go_online: ");Serial.println(dre.iot_go_online);
+//  Serial.print("dre.iot_connect: ");Serial.println(dre.iot_connect);
+//  Serial.print("dre.iot_go_online: ");Serial.println(dre.iot_go_online);
   #endif
   #endif
   PulsingCmd();
@@ -83,9 +83,9 @@ void loop() {
   #endif
 
   #ifdef DEBUG_IOT
-  Serial.print("iot_connected: ");Serial.println(dre.iot_connected);
-  Serial.print("iot_publish: ");Serial.println(dre.iot_publish);
-  Serial.print("iot_connect: ");Serial.println(dre.iot_connect);
+  //Serial.print("iot_connected: ");Serial.println(dre.iot_connected);
+  //Serial.print("iot_publish: ");Serial.println(dre.iot_publish);
+  //Serial.print("iot_connect: ");Serial.println(dre.iot_connect);
   #endif
 
   while(timSync==false){

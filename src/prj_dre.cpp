@@ -38,7 +38,11 @@ void dre_init(void){
 
   #ifdef CFG_USE_RELAY_SET
   for (i = 0; i < CFG_RELAYSET_NUMBER; i++){
+#ifdef CFG_RELAY_USE_OVERRIDE    
     dre.ovr_relay_action[i] = false;
+#else
+    dre.ovr_relay_action[i] = true;
+#endif    
     dre.cmd_relay_action[i] = false;
     dre.relay_action[i] = true;
 

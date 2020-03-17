@@ -13,10 +13,17 @@
 #define CFG_PULSE_CMD_PIN -1 // A través de este pin se va a enviar el comando de temporización del masaje
 #define CFG_EMGCY_BUT -1  // A través de este pin se va a recibir la petición de emergencia.
 #elif ARDUINO_ESP8266_NODEMCU
-#error "TODO: Definir pines para el ARDUINO_ESP8266_NODEMCU"
+//#error "TODO: Definir pines para el ARDUINO_ESP8266_NODEMCU"
 #define CFG_BAT_ADC -1
 #define CFG_PULSE_CMD_PIN -1 // A través de este pin se va a enviar el comando de temporización del masaje
 #define CFG_EMGCY_BUT -1  // A través de este pin se va a recibir la petición de emergencia.
+#define CFG_RELAYSET_PINS {D4}
+#elif ARDUINO_ESP8266_ESP01
+//#error "TODO: Definir pines para el ARDUINO_ESP8266_NODEMCU"
+#define CFG_BAT_ADC -1
+#define CFG_PULSE_CMD_PIN -1 // A través de este pin se va a enviar el comando de temporización del masaje
+#define CFG_EMGCY_BUT -1  // A través de este pin se va a recibir la petición de emergencia.
+#define CFG_RELAYSET_PINS {13, 12, 14, 27, 26, 25, 33, 32}
 #elif ESP32_DEV
 #define CFG_BAT_ADC 34
 #define CFG_EXTRA_ADC 35

@@ -7,6 +7,8 @@
   ADC_MODE(ADC_VCC);
 #elif ARDUINO_ESP8266_NODEMCU
   ADC_MODE(ADC_VCC);
+#elif ARDUINO_ESP8266_ESP01
+  ADC_MODE(ADC_VCC);
 #elif ESP32_DEV
 #elif TEENSY31
 #elif ARDUINO_AVR_UNO
@@ -21,6 +23,8 @@ void prj_input(void){
   #ifdef ESP8266_WEMOS_D1MINI
   dre.bat = ESP.getVcc();
   #elif ARDUINO_ESP8266_NODEMCU
+  dre.bat = ESP.getVcc();
+  #elif ARDUINO_ESP8266_ESP01
   dre.bat = ESP.getVcc();
   #elif ESP32_DEV
   dre.bat = analogRead(CFG_BAT_ADC);

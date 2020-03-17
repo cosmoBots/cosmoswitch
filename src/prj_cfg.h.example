@@ -14,14 +14,20 @@
 #define CFG_USE_IOT
 #define CFG_USE_RELAY_SET
 //#define CFG_USE_EMGCY_RELAY
+#define CFG_IOT_ONLY_RX
+//#define CFG_RELAY_USE_OVERRIDE
 
 // Configuración de mecanismos de traza
 //#define DEBUG_TIEMPO_CICLO
-//#define DEBUG_IOT
-#define DEBUG_PULSE
+#define DEBUG_IOT
+//#define DEBUG_PULSE
 
 /* Microcontroller variants */
 #ifdef ESP8266_WEMOS_D1MINI
+#undef CFG_USE_DEEPSLEEP  // Deep Sleep only implemented in ESP32_DEV
+// TODO: Implement deep sleep mode in ESP8266
+#undef CFG_USE_MOTOR_SHIELD
+#elif ARDUINO_ESP8266_ESP01
 #undef CFG_USE_DEEPSLEEP  // Deep Sleep only implemented in ESP32_DEV
 // TODO: Implement deep sleep mode in ESP8266
 #undef CFG_USE_MOTOR_SHIELD
@@ -75,7 +81,7 @@
 #define CFG_EMGCY_ACTTIME CALC_CYCLE_COUNT_FOR_TIME(5000000)
 
 #ifdef CFG_USE_MQTT
-#define TOKEN "A1E-7p4h7Rjd3gx960Z2R1F5dfMxSTE689" // Put your Ubidots' TOKEN
+#define TOKEN "...." // Put your Ubidots' TOKEN
 #define MQTT_CLIENT_NAME "cosmoswitch1" // MQTT client Name, please enter your own 8-12 alphanumeric character ASCII string;
 //it should be a random and unique ascii string and different from all other devices
 #define CFG_PUBLISH_TIME CALC_CYCLE_COUNT_FOR_TIME(1000000)
@@ -83,11 +89,17 @@
 #define OVR_EMGCY_ACTION_LABEL "ovr_emgcy_action" // Assing the variable label
 #define CMD_PULSES_LABEL "cmd_pulses" // Assing the variable label
 #define OVR_PULSES_LABEL "ovr_pulses" // Assing the variable label
-#define DEVICE_LABEL "cosmoswitch1" // Assig the device label
-#define CFG_MQTT_BROKER "things.ubidots.com"
+#define DEVICE_LABEL "cosmoswitch2" // Assig the device label
+#define CFG_MQTT_BROKER "industrial.api.ubidots.com"
 
 #ifdef CFG_USE_RELAY_SET
+#ifdef ARDUINO_ESP8266_ESP01
+#define CFG_RELAYSET_NUMBER 1
+#elif ARDUINO_ESP8266_NODEMCU
+#define CFG_RELAYSET_NUMBER 1
+#else
 #define CFG_RELAYSET_NUMBER 8
+#endif
 #define CMD_RELAYSET_ACTION_LABEL "cmd_relay_action_" // Assing the variable label
 #define OVR_RELAYSET_ACTION_LABEL "ovr_relay_action_" // Assing the variable label
 #endif
@@ -96,15 +108,15 @@
 
 #ifdef CFG_USE_WIFI
 #if 1
-#define WIFISSID "MCC_PUBLICO" // Put your WifiSSID here
-#define PASSWORD "" // Put your wifi password here
+#define WIFISSID "..." // Put your WifiSSID here
+#define PASSWORD "..." // Put your wifi password here
 #else
 #if 1
-#define WIFISSID "FaroWifiSot" // Put your WifiSSID here
-#define PASSWORD "20DJunioD2009" // Put your wifi password here
+#define WIFISSID "..." // Put your WifiSSID here
+#define PASSWORD "..." // Put your wifi password here
 #else
-#define WIFISSID "iacext" // Put your WifiSSID here
-#define PASSWORD ".redwifideliac." // Put your wifi password here
+#define WIFISSID "..." // Put your WifiSSID here
+#define PASSWORD "..." // Put your wifi password here
 #endif
 #endif
 #endif

@@ -69,15 +69,21 @@ void prj_output(void){
 
   #ifdef CFG_USE_RELAY_SET
   for (i = 0; i < CFG_RELAYSET_NUMBER; i++){
+#ifdef CFG_RELAY_USE_OVERRIDE    
     if (dre.ovr_relay_action[i] == true) {
       dre.relay_action_pin[i] = dre.cmd_relay_action[i];
     } else {
       dre.relay_action_pin[i] = dre.relay_action[i];
     }
+#else
+    dre.relay_action_pin[i] = dre.cmd_relay_action[i];
+#endif
     if (dre.relay_action_pin[i] == false){
       digitalWrite(relay_set[i],HIGH);
+      digitalWrite(LED_BUILTIN,HIGH);      
     } else {
         digitalWrite(relay_set[i],LOW);
+      digitalWrite(LED_BUILTIN,LOW);        
     }
   }
   #endif
